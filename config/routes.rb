@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :users, :only => [:index, :show] do
-    get 'interests' => 'interests#index'
+  resources :users, only: [:index, :show, :create, :destroy] do
+    resources :interests, only: [:index, :create, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
