@@ -16,6 +16,7 @@ group :development, :test do
 end
 
 gem 'faker', :group => :test
+gem 'pg', :group => :production
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
