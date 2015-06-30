@@ -14,7 +14,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'faker', :group => :test
+gem 'faker'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
