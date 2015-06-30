@@ -1,4 +1,5 @@
 class InterestsController < ApplicationController
+  before_action :allow_cross_domain
 
   def index
     render json: User.find(params[:user_id]).interests

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :allow_cross_domain
  
   def index
     render json: User.all
@@ -12,6 +13,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       render :status => 201
+    else
+      render :status => 404
+    end
+  end
+
+  def login
+    @user = User.where(email: params[:email]).first
+    if @user.password = params[:password]
+      render json: @user.id
     else
       render :status => 404
     end

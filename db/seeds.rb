@@ -16,7 +16,7 @@ UserInterest.delete_all
     username: Faker::Internet.user_name,
     email: Faker::Internet.email,
     password: Faker::Internet.password(8),
-    user_image: Faker::Avatar.image("my-own-slug", "50x50"),
+    user_image: Faker::Avatar.image,
     age: rand(10) + 20,
     bio: "I LOVE ANDY'S BACKEND"
     )
