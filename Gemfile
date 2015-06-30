@@ -5,18 +5,16 @@ gem 'rails', '4.2.2'
 
 gem 'rails-api'
 
-
 gem 'spring', :group => :development
 
-
-gem 'sqlite3'
+gem 'pg', :group => :production
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'sqlite3'
 end
 
 gem 'faker', :group => :test
-gem 'pg', :group => :production
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
