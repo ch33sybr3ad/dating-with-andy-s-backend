@@ -7,6 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
+User.delete_all
+Interest.delete_all
+UserInterest.delete_all
+
 5.times do
   User.create(
     username: Faker::Internet.user_name,
@@ -18,14 +22,14 @@ require 'faker'
     )
 end
 
-coding = Interest.create(name:coding)
-hiking = Interest.create(name:hiking)
-dancing = Interest.create(name:dancing)
-meditation = Interest.create(name:meditation)
-sleeping = Interest.create(name:sleeping)
+coding = Interest.create(name:"coding")
+hiking = Interest.create(name:"hiking")
+dancing = Interest.create(name:"dancing")
+meditation = Interest.create(name:"meditation")
+sleeping = Interest.create(name:"sleeping")
 
-UserInterest.create(user_id: 1 ,interest_id: 1)
-UserInterest.create(user_id: 2 ,interest_id: 2)
-UserInterest.create(user_id: 3 ,interest_id: 3)
-UserInterest.create(user_id: 4 ,interest_id: 4)
-UserInterest.create(user_id: 5 ,interest_id: 5)
+UserInterest.create(user_id: User.first.id ,interest_id: Interest.first.id)
+UserInterest.create(user_id: User.second.id ,interest_id: Interest.second.id)
+UserInterest.create(user_id: User.third.id ,interest_id: Interest.third.id)
+UserInterest.create(user_id: User.fourth.id ,interest_id: Interest.fourth.id)
+UserInterest.create(user_id: User.fifth.id ,interest_id: Interest.fifth.id)
