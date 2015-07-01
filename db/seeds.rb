@@ -21,12 +21,33 @@ UserInterest.delete_all
     bio: "I LOVE ANDY'S BACKEND",
     eye_color: Faker::Commerce.color, 
     height: rand(5),
+    gender: ['male', 'female'].sample,
     looking_for: "LOVE",
-    ethnicity: "white",
+    ethnicity: ["white", "asian", "black", "hispanic", "other"].sample,
     zip_code: Faker::Address.zip,
     location: "San Francisco, CA",
+    long: 37.7833,
+    lat: -122.4167
     )
 end
+
+User.create(
+  username: Faker::Internet.user_name,
+  email: Faker::Internet.email,
+  password: Faker::Internet.password(8),
+  user_image: Faker::Avatar.image,
+  age: rand(10) + 20,
+  bio: "IM FROM DENVER",
+  eye_color: Faker::Commerce.color, 
+  height: rand(5),
+  gender: ['male', 'female'].sample,
+  looking_for: "LOVE",
+  ethnicity: ["white", "asian", "black", "hispanic", "other"].sample,
+  zip_code: Faker::Address.zip,
+  location: "Denver, Colorado",
+  long: 39.7392,
+  lat: -104.9903
+  )
 
 coding = Interest.create(name:"coding")
 hiking = Interest.create(name:"hiking")
