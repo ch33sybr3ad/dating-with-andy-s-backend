@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   post 'login' => 'users#login'
   get 'search' => 'users#search'
   root 'users#index'
+  post 'users/:id' => 'users#update'
+
+  # match '/users/:id', :controller => 'users', :action => 'update', :via => [:options]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
