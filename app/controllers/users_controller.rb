@@ -34,6 +34,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    users = User.all
+    @object = {}
+    users.each do |user|
+      @object[:"#{user.username}"] = { user: user, interests: user.interests}
+    end
+    render json: @object
+  end
+
   private
 
     def user_params

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
 
   post 'login' => 'users#login'
+  get 'search' => 'users#search'
   root 'users#index'
 
   # Example of regular route:
