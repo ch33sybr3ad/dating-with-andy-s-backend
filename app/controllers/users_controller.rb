@@ -19,8 +19,8 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user = User.where(email: params[:email]).first
-    if @user.password = params[:password]
+    @user = User.where(email: user_params['email']).first
+    if @user.password == user_params['password']
       render json: @user.id
     else
       render :status => 404
