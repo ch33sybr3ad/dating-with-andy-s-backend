@@ -18,7 +18,13 @@ UserInterest.delete_all
     password: Faker::Internet.password(8),
     user_image: Faker::Avatar.image,
     age: rand(10) + 20,
-    bio: "I LOVE ANDY'S BACKEND"
+    bio: "I LOVE ANDY'S BACKEND",
+    eye_color: Faker::Commerce.color, 
+    height: rand(5),
+    looking_for: "LOVE",
+    ethnicity: "white",
+    zip_code: Faker::Address.zip,
+    location: "San Francisco, CA",
     )
 end
 
