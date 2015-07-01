@@ -9,16 +9,16 @@ class InterestsController < ApplicationController
     @interest = Interest.find_or_create_by(interest_params)
     if @interest.save
       UserInterest.create(user_id:params[:user_id], interest_id: @interest.id)
-      render :status => 201
+      render json: "interest was successfully completed", status: 201
     else
-      render :status => 404
+      render json: @interest.errors.full_messages, status: 404
     end
   end
 
   def destroy
     @interest = Interest.find(params[:id])
     if @interest.delete
-      render :status => 204
+      render json: "interest was successfully deleted", status: 204
     end
   end
 
